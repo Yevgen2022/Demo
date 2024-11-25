@@ -1,12 +1,13 @@
 <?php
 
 
-
 use Core\Database;
 use Core\Validator;
 
 
-require base_path('Validator.php');
+//require base_path('Validator.php');
+require __DIR__ . '/../../Core/Validator.php';
+
 
 
 $config = require base_path('config.php');
