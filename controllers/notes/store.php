@@ -30,7 +30,7 @@ if (! empty($errors)) {
         'user_id' => 1
     ]);
 //}
-    header('location: /notes/');
+    header('location: /notes');
     die();
 
 
