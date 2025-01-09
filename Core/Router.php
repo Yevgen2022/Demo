@@ -69,7 +69,7 @@ class Router
 //                    $middleware = Middleware::MAP[$route['middleware']];
 //
 //                    (new $middleware)->handle();
-          //  }
+                //  }
 
 
 //                if ($route['middleware'] === 'guest') {
@@ -82,22 +82,22 @@ class Router
 //                }
 
 
-            return require base_path($route['controller']);
+                return require base_path($route['controller']);
+            }
         }
+
+        $this->abort();
     }
 
-$this->abort();
-}
+    protected
+    function abort($code = 404)
+    {
+        http_response_code($code);
 
-protected
-function abort($code = 404)
-{
-    http_response_code($code);
+        require base_path("views/{$code}.php");
 
-    require base_path("views/{$code}.php");
-
-    die();
-}
+        die();
+    }
 }
 
 
