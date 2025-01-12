@@ -29,6 +29,7 @@
 
             <div class="hidden md:block">
                 <div class="ml-4 flex items-center md:ml-6">
+
                     <button type="button"
                             class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                         <span class="absolute -inset-1.5"></span>
@@ -46,20 +47,16 @@
                             <button type="button"
                                     class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                                     id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                <span class="absolute -inset-1.5"></span>
+<!--                                <span class="absolute -inset-1.5"></span>-->
                                 <span class="sr-only">Open user menu</span>
 
-
                                 <?php if ($_SESSION['user'] ?? false) : ?>
-
                                     <img class="h-8 w-8 rounded-full"
                                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                          alt="">
                                 <?php endif; ?>
                             </button>
 
-                            <!--       <a href="/logout" class="-->
-                            <?php //= urlIs('/login') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?><!--  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md  text-sm font-medium ">Log out</a>-->
                             <?php if (!($_SESSION['user'] ?? false)) : ?>
 
                                 <a href="/register"
@@ -70,22 +67,19 @@
 
                             <?php endif; ?>
 
+                        </div>
+                    </div>
 
                             <?php if ($_SESSION['user'] ?? false) : ?>
-                                <div class="ml-3">
-<!--                                    <a href="/logout"-->
-<!--                                       class="--><?php //= urlIs('/login') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?><!--  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md  text-sm font-medium ">Log-->
-<!--                                        out</a>-->
+                            <div class="ml-3">
                                     <form method="POST" action="/session">
                                         <input type="hidden" name="_method" value="DELETE" />
 
                                         <button class="text-white">Log out</button>
                                     </form>
-                                </div>
+                             </div>
                             <?php endif; ?>
 
-                        </div>
-                    </div>
                 </div>
 
 
