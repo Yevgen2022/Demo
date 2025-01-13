@@ -9,7 +9,7 @@ class Database
     public $connection;
     public $statement;
 
-    public function __construct($config, $username = 'root', $password = 'Gena2022$')
+    public function __construct($config, $username = 'root', $password = '')
     {
 
         /*$config = [
