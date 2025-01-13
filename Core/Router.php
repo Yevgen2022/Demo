@@ -51,7 +51,6 @@ class Router
 
     public function only($key)
     {
-//        dd($key);
         $this->routes[array_key_last($this->routes)]['middleware'] = $key;
         return $this;
 

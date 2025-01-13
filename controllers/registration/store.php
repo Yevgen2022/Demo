@@ -22,7 +22,7 @@ if (!Validator::string($password, 7, 255)) {
 }
 
 
-if (! empty($errors)) {
+if (!empty($errors)) {
     return view('registration/create.view.php', [
         'errors' => $errors
     ]);
@@ -34,7 +34,6 @@ $db = App::resolve(Database::class);
 $user = $db->query('select * from users where email = :email', [
     ':email' => $email
 ])->find();
-
 
 
 if ($user) {
@@ -55,7 +54,7 @@ if ($user) {
 //    'email' => $email,
 //];
 
-login($user );
+login($user);
 
 
 header("Location: /");
